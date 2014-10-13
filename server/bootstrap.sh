@@ -74,4 +74,8 @@ ln -sf /vagrant/server/vichan.nginx /etc/nginx/sites-available/
 ln -sf /etc/nginx/sites-available/vichan.nginx /etc/nginx/sites-enabled/
 service nginx reload
 
+echo
 echo "Server set up, please browse to http://localhost:8080/install.php"
+echo "to complete the installation. Default database settings will work."
+echo "After you complete the installation steps, go to "
+echo "http://localhost:8080/mod.php and log in as admin:password."
