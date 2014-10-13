@@ -4,7 +4,7 @@
 set -e
 export DEBIAN_FRONTEND=noninteractive
 
-apt-get -y install nginx-extras imagemagick php5 php5-cli php5-curl php5-imagick php5-geoip php5-gd php5-fpm redis-server mariadb-server mariadb-client php5-mysql php5-redis emacs24-nox
+apt-get -y install nginx-extras imagemagick php5 php5-cli php5-curl php5-imagick php5-geoip php5-gd php5-fpm redis-server mariadb-server mariadb-client php5-mysql php5-redis
 
 # Make sure any imported database is utf8mb4
 # http://mathiasbynens.be/notes/mysql-utf8mb4
@@ -25,7 +25,11 @@ EOF123
 
 service mysql restart
 
-mysql -uroot -e "CREATE DATABASE IF NOT EXISTS vichan; GRANT USAGE ON *.* TO vichan@localhost IDENTIFIED BY 'vichanpass'; GRANT ALL PRIVILEGES ON vichan.* TO vichan@localhost; FLUSH PRIVILEGES;"
+mysql -uroot -e \
+"CREATE DATABASE IF NOT EXISTS vichan; \
+GRANT USAGE ON *.* TO vichan@localhost IDENTIFIED BY ''; \
+GRANT ALL PRIVILEGES ON vichan.* TO vichan@localhost; \
+FLUSH PRIVILEGES;"
 
 sed \
   -e 's/post_max_size = .*/post_max_size = 12M/' \
@@ -50,13 +54,15 @@ sudo install -m 775 -o www-data -g www-data -d /var/www/templates/cache
 ln -sf \
   /vagrant/templates/* \
   /var/www/templates/
-sudo install -m 775 -o www-data -g www-data -d /var/www/inc
-ln -sf \
-  /vagrant/inc/* \
-  /var/www/inc/
-rm -f /var/www/inc/instance-config.php
-cp /vagrant/inc/instance-config.php /var/www/inc/
-chown www-data /var/www/inc/instance-config.php
+if ! [ -d /var/www/inc ]; then
+  sudo install -m 775 -o www-data -g www-data -d /var/www/inc
+  ln -sf \
+    /vagrant/inc/* \
+    /var/www/inc/
+  rm -f /var/www/inc/instance-config.php
+  cp /vagrant/server/instance-config.php /var/www/inc/
+  chown www-data /var/www/inc/instance-config.php
+fi
 
 rm -f /etc/nginx/sites-enabled/default
 ln -sf /vagrant/server/vichan.nginx /etc/nginx/sites-available/
