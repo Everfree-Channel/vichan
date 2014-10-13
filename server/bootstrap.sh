@@ -69,7 +69,7 @@ if ! [ -d /var/www/inc ]; then
   ln -s /vagrant/server/config-extra.php /var/www/inc/config.php
 fi
 
-rm -f /etc/nginx/sites-enabled/default
+rm -f /etc/nginx/sites-enabled/* /etc/nginx/sites-available/vichan.nginx
 cp /vagrant/server/vichan.nginx /etc/nginx/sites-available/
 ln -sf /etc/nginx/sites-available/vichan.nginx /etc/nginx/sites-enabled/
 service nginx restart
