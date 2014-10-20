@@ -32,9 +32,9 @@ GRANT ALL PRIVILEGES ON vichan.* TO vichan@localhost; \
 FLUSH PRIVILEGES;"
 
 sed \
-  -e 's/post_max_size = .*/post_max_size = 12M/' \
+  -e 's/post_max_size = .*/post_max_size = 15M/' \
   -e 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/' \
-  -e 's/upload_max_filesize = .*/upload_max_filesize = 5M/' \
+  -e 's/upload_max_filesize = .*/upload_max_filesize = 15M/' \
   -i /etc/php5/fpm/php.ini
 
 service php5-fpm restart

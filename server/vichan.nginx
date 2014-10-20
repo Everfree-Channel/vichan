@@ -4,7 +4,7 @@ server {
 
 	server_name vichantest;
 
-	client_max_body_size 15m;
+	client_max_body_size 12m;
 	index index.php index.html index.htm;
 	root /var/www;
 
