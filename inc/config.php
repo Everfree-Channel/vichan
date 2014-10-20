@@ -957,7 +957,6 @@
 	$config['additional_javascript'][] = 'js/ajax.js';
 	$config['additional_javascript'][] = 'js/ajax-post-controls.js';
 	$config['additional_javascript'][] = 'js/expand-video.js';
-	$config['additional_javascript'][] = 'js/live-index.js';
 	$config['additional_javascript'][] = 'js/inline-expanding.js';
 	$config['additional_javascript'][] = 'js/local-time.js';
 	$config['additional_javascript'][] = 'js/titlebar-notifications.js';
