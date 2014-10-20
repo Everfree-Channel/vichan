@@ -195,6 +195,8 @@ function _create_antibot($board, $thread) {
 	
 	$antibot = new AntiBot(array($board, $thread));
 	
+	// This code is brain damaged.
+	/*
 	if (!isset($purged_old_antispam)) {
 		$purged_old_antispam = true;
 		query('DELETE FROM ``antispam`` WHERE `expires` < UNIX_TIMESTAMP()') or error(db_error());
@@ -216,6 +218,7 @@ function _create_antibot($board, $thread) {
 	$query->bindValue(':thread', $thread);
 	$query->bindValue(':hash', $antibot->hash());
 	$query->execute() or error(db_error($query));
+	*/
 	
 	return $antibot;
 }
@@ -264,6 +267,8 @@ function checkSpam(array $extra_salt = array()) {
 	if ($hash != $_hash)
 		return true;
 
+	// Remove brain damage.
+	/*
 	$query = prepare('SELECT `passed` FROM ``antispam`` WHERE `hash` = :hash');
 	$query->bindValue(':hash', $hash);
 	$query->execute() or error(db_error($query));
@@ -271,12 +276,15 @@ function checkSpam(array $extra_salt = array()) {
 		// there was no database entry for this hash. most likely expired.
 		return true;
 	}
+	*/
 
 	return $hash;
 }
 
 function incrementSpamHash($hash) {
+	/*
 	$query = prepare('UPDATE ``antispam`` SET `passed` = `passed` + 1 WHERE `hash` = :hash');
 	$query->bindValue(':hash', $hash);
 	$query->execute() or error(db_error($query));
+	*/
 }
