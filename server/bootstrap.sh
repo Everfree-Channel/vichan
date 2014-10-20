@@ -70,6 +70,7 @@ if ! [ -d /var/www/inc ]; then
   ln -s /vagrant/server/config-extra.php /var/www/inc/config.php
 fi
 
+# VirtualBox shared folders don't play nicely with sendfile.
 sed \
   -e 's/sendfile on;/sendfile off;/' \
   -i /etc/nginx/nginx.conf
