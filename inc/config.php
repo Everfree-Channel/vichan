@@ -948,13 +948,38 @@
  */
 
 	// Additional Javascript files to include on board index and thread pages. See js/ for available scripts.
+	$config['additional_javascript'] = Array();
 	$config['additional_javascript'][] = 'js/jquery.min.js';
+	$config['additional_javascript'][] = 'js/jquery-ui.custom.min.js'; // Optional; if you want the form to be draggable.
+	$config['additional_javascript'][] = 'js/settings.js';
+	$config['additional_javascript'][] = 'js/quick-reply.js';
+	$config['additional_javascript'][] = 'js/quick-post-controls.js';
+	$config['additional_javascript'][] = 'js/ajax.js';
+	$config['additional_javascript'][] = 'js/ajax-post-controls.js';
+	$config['additional_javascript'][] = 'js/expand.js';
+	$config['additional_javascript'][] = 'js/expand-video.js';
+	$config['additional_javascript'][] = 'js/live-index.js';
 	$config['additional_javascript'][] = 'js/inline-expanding.js';
 	$config['additional_javascript'][] = 'js/local-time.js';
-	$config['additional_javascript'][] = 'js/inline-expanding.js';
+	$config['additional_javascript'][] = 'js/titlebar-notifications.js';
 	$config['additional_javascript'][] = 'js/auto-reload.js';
+	$config['additional_javascript'][] = 'js/hide-threads.js';
+	$config['additional_javascript'][] = 'js/hide-images.js';
+	$config['additional_javascript'][] = 'js/watch.js';
 	$config['additional_javascript'][] = 'js/post-hover.js';
+	$config['additional_javascript'][] = 'js/options.js';
+	$config['additional_javascript'][] = 'js/options/general.js';
 	$config['additional_javascript'][] = 'js/style-select.js';
+	$config['additional_javascript'][] = 'js/forced-anon.js';
+	$config['additional_javascript'][] = 'js/webm-settings.js';
+	$config['additional_javascript'][] = 'js/smartphone-spoiler.js';
+	$config['additional_javascript'][] = 'js/mobile-style.js';
+	$config['additional_javascript'][] = 'js/fix-report-delete-submit.js';
+	$config['additional_javascript'][] = 'js/post-select.js'; // BB made custom javascript, import
+	$config['additional_javascript'][] = 'js/show-backlinks.js';
+	$config['additional_javascript'][] = 'js/show-op.js';
+	$config['additional_javascript'][] = 'js/youtube.js';
+	$config['additional_javascript'][] = 'js/catalog-link.js';
 
 	// Some scripts require jQuery. Check the comments in script files to see what's needed. When enabling
 	// jQuery, you should first empty the array so that "js/query.min.js" can be the first, and then re-add
