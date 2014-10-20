@@ -859,8 +859,11 @@
 
 	// Custom stylesheets available for the user to choose. See the "stylesheets/" folder for a list of
 	// available stylesheets (or create your own).
+	$config['stylesheets']['Zecora'] = '';
+	$config['stylesheets']['Zecora B'] = 'diet.css';
 	$config['stylesheets']['Yotsuba B'] = ''; // Default; there is no additional/custom stylesheet for this.
 	$config['stylesheets']['Yotsuba'] = 'yotsuba.css';
+	$config['stylesheets']['Butterscotch Sundae'] = 'butterscotchsundae.css';
 	// $config['stylesheets']['Futaba'] = 'futaba.css';
 	// $config['stylesheets']['Dark'] = 'dark.css';
 
@@ -868,7 +871,7 @@
 	// $config['uri_stylesheets'] = 'http://static.example.org/stylesheets/';
 
 	// The default stylesheet to use.
-	$config['default_stylesheet'] = array('Yotsuba B', $config['stylesheets']['Yotsuba B']);
+	$config['default_stylesheet'] = array('Zecora', $config['stylesheets']['Zecora']);
 
 	// Make stylesheet selections board-specific.
 	$config['stylesheets_board'] = false;

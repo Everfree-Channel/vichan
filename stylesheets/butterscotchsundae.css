@@ -1,0 +1,111 @@
+body {
+	background: url(img/bss-b.png) top repeat-x #dcb!important;
+	color: #421!important;
+}
+a:link, a:visited {
+	color: #b21d2c!important;
+}
+a:link:hover, a:visited:hover {
+	color: #e42343!important;
+}
+#topbar {
+	background: url(img/bss-tb.png) top repeat-x #532!important;
+	background-size: auto 100%!important;
+	color: #dad1dc!important;
+}
+#optiondd {
+	background: #532!important;
+	color: #e1bd35!important;
+}
+.boardbar a,.boardbar .boardarray a,.rightbar a, #themelist a {
+	color: #fbaa51!important;
+}
+.boardbar a:hover,.boardbar .boardarray a:hover,.rightbar a:hover, #themelist a:hover {
+	color: #fde752!important;
+}
+#frontpage {
+	color: #fde752!important;
+}
+#frontpage:hover {
+	color: #fed!important;
+}
+.boardbar a:hover,.boardbar .boardarray a:hover,.rightbar a:hover, #frontpage:hover {
+	background: url(img/bss-tbh.png) top repeat-x #7c4a32!important;
+	background-size: auto 100%!important;
+}
+#themelist a:hover {
+	background: #7c4a32!important;
+}
+.boardbar .boardarray {
+	border-right: 1px solid #432!important;
+}
+#themelist a.selected, a.selected:hover {
+	color: #494!important;
+}
+header div.subtitle {
+	color: #fbaa51!important;
+}
+header h1 {
+	color: #fde752!important;
+}
+div.banner {
+	background: url(img/bss-bn.png) top repeat-x #fde752!important;
+	background-size: auto 100%!important;
+	color: #c5604c!important;
+}
+hr {
+	border-color: #7e4b33!important;
+}
+div.post span.rule,div.post.reply span.rule {
+	background: #7e4b33!important;
+}
+.threadblock {
+	background: url(img/bss-t1.png) top repeat-x #dcb!important;
+	background-size: auto 100%!important;
+	border-color: #ae7b64!important;
+}
+.threadblock:nth-child(even) {
+	background: url(img/bss-t1.png) top repeat-x #dcb!important;
+	background-size: auto 100%!important;
+	border-color: #af7560!important;
+}
+.threadblock > .reply {
+	background: #c6a996!important;
+	border-color: #966953!important;
+}
+.threadblock > .reply:nth-of-type(even) {
+	background: #b8a090!important;
+	border-color: #877464!important;
+}
+div.post.reply.highlighted, div.post-hover {
+	background: #fbeed6!important;
+	border-color: #d8cda4!important;
+}
+textarea,input[type="text"],input[type="password"] {
+	background: #fbeed6!important;
+	color: #421!important;
+	border-color: #bd7a5a!important;
+}
+form table tr th {
+	background: #bd7a5a!important;
+}
+span.omitted {
+	color: #954!important;
+}
+span.quote {
+	color: #39856b!important;
+}
+div.pages {
+	background: #bd7a5a!important;
+	border-color: #7e4b33!important;
+	color: #7e4b33!important;
+}
+div.boardlist.bottom:before {
+	color: #ffef7f!important;
+}
+span.boardarray {
+	color: #a44c3e!important;
+}
+div.blotter {
+	color: #9c2817!important;
+}

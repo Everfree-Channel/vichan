@@ -1,0 +1,21 @@
+#topbar, #optiondd {
+	background: #444142!important;
+}
+.boardbar a:hover,.boardbar .boardarray a:hover,.rightbar a:hover,#frontpage:hover {
+	background: #514e4f!important;
+}
+div.banner {
+	background: #276!important;
+}
+.threadblock {
+	background: #d9d8da!important;
+}
+.threadblock > .reply {
+	background: #b1b2b5!important;
+}
+.threadblock > .reply:nth-of-type(even) {
+	background: #b2aeaf!important;
+}
+span.hashtag {
+	background: #1c1c1c!important;
+}
