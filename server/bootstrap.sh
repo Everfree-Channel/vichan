@@ -48,6 +48,8 @@ ln -sf \
   /vagrant/stylesheets/ \
   /vagrant/tools/ \
   /vagrant/*.sql \
+  /vagrant/*.ico \
+  /vagrant/*.png \
   /vagrant/*.md \
   /var/www/
 sudo install -m 775 -o www-data -g www-data -d /var/www/templates
