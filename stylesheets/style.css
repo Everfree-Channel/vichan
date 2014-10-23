@@ -1,26 +1,102 @@
 body {
-  background: #EEF2FF url('img/fade-blue.png') repeat-x 50% 0%;
-  color: black;
-  font-family: arial,helvetica,sans-serif;
-  font-size: 10pt;
-  margin: 0 4px;
-  padding-left: 4px;
-  padding-right: 4px;
+	background: #d9d8da;
+	color: #231f20;
+	font-family: "Trebuchet MS", sans-serif;
+	font-size: 11pt;
+	margin: 0;
+	padding: 0;
 }
 
-a,a:visited {
-  text-decoration: underline;
-  color: #34345C;
+@font-face {
+	font-family: "Gentium Book Basic";
+	font-style: italic;
+	font-weight: 700;
+	src: url('genbasbi.ttf') format('truetype');
+}
+@font-face {
+	font-family: "Comic Neue";
+	font-style: normal;
+	font-weight: 400;
+	src: url('ComicNeue-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: "Comic Neue";
+	font-style: italic;
+	font-weight: 400;
+	src: url('ComicNeue-Regular-Oblique.ttf') format('truetype');
+}
+@font-face {
+	font-family: "Comic Neue";
+	font-style: normal;
+	font-weight: 700;
+	src: url('ComicNeue-Bold.ttf') format('truetype');
+}
+@font-face {
+	font-family: "Comic Neue";
+	font-style: italic;
+	font-weight: 700;
+	src: url('ComicNeue-Bold-Oblique.ttf') format('truetype');
 }
 
-a:hover,p.intro a.post_no:hover {
-  color: #ff0000;
+.boardlist.top {
+	display: block;
+	width: 100%;
+	z-index: 9001;
+	position: fixed; /* absolute for floating, toggle with option */
+	top: 0;
+	white-space: nowrap;
+	margin: 0;
+	background: #444142;
+	background: url(img/z-tb.png) top repeat-x #444142;
+	background-size: auto 100%!important;
+	color: #dad1dc;
+	box-shadow: 0 0.1em 0.5em #000;
+	-o-box-shadow: 0 0.1em 0.5em #000;
+	-moz-box-shadow: 0 0.1em 0.5em #000;
+	-webkit-box-shadow: 0 0.1em 0.5em #000;
+}
+.boardbar {
+	display: inline-block;
+}
+.boardbar a,.boardbar .boardarray a,.rightbar a,#frontpage {
+	display: inline-block;
+	color: #cdd!important;
+	margin: 0;
+	padding: 0.5em;
+}
+.boardbar a:hover,.boardbar .boardarray a:hover,.rightbar a:hover,#frontpage:hover {
+	background: url(img/z-tbh.png) top repeat-x #514e4f;
+	background-size: auto 100%!important;
+	text-decoration: none;
+}
+.boardbar a:hover,.boardbar .boardarray a:hover,.rightbar a:hover {
+	color: #eff!important;
+}
+.boardbar .boardarray {
+	border-right: 1px solid #333;
+}
+.boardbar .boardarray:last-child {
+	border-right: none;
+}
+.boardbar .boardarray a:after, .boardbar .boardarray a:before {
+	content: '/';
 }
 
+a {
+	text-decoration: none;
+}
+a:link, a:visited {
+	text-decoration: none;
+	color: #34345C;
+}
+a:link:hover, a:visited:hover {
+	color: #6080c0;
+}
 a.post_no {
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
+	color: black;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
 }
 
 p.intro a.post_no {
@@ -66,8 +142,13 @@ h1 {
   margin: 0;
 }
 
+header h1 {
+	font: bold italic 28pt "Gentium Book Basic",serif;
+	margin: 0;
+}
+
 header div.subtitle,h1 {
-  color: #AF0A0F;
+	color: #274;
   text-align: center;
 }
 
@@ -87,13 +168,13 @@ form table input {
   height: auto;
 }
 
-input[type="text"],input[type="password"],textarea {
-  border: 1px solid #a9a9a9;
-  text-indent: 0;
-  text-shadow: none;
-  text-transform: none;
-  word-spacing: normal;
-  max-width: 75%;
+input[type="text"], input[type="password"], textarea {
+	font-family: "Trebuchet MS", sans-serif!important;
+	border: 1px solid #a9a9a9;
+	text-indent: 0px;
+	text-shadow: none;
+	text-transform: none;
+	word-spacing: normal;
 }
 
 #quick-reply input[type="text"], input[type="password"], #quick-reply textarea {
@@ -161,11 +242,13 @@ div.post p.fileinfo {
 }
 
 div.banner {
-  background-color: #E04000;
-  font-size: 12pt;
-  font-weight: bold;
-  text-align: center;
-  margin: 1em 0;
+	background: url(img/z-bn.png) top repeat-x #276;
+	background-size: auto 100%!important;
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: center;
+	margin: 1em 0em;
+	padding: 0.25em;
 }
 
 div.banner,div.banner a {
@@ -177,10 +260,10 @@ div.banner a:hover {
   text-decoration: none;
 }
 
-img.banner,img.board_image {
-  display: block;
-  border: 1px solid #a9a9a9;
-  margin: 12px auto 0 auto;
+img.banner {
+	float: none;
+	border: 1px solid #a9a9a9;
+	margin: 12px auto 0 auto;
 }
 
 .post-image {
@@ -206,6 +289,19 @@ div.post i.fa {
   font-size: 16px;
 }
 
+div.post span.rule {
+	display: block;
+	clear: both;
+	height: 1px;
+	width: 100%;
+	margin: 0.5em 0 -0.9em 0;
+	background: #999;
+}
+
+div.post.reply span.rule {
+	background: #777;
+}
+
 div.post.op {
   margin-right: 20px;
   margin-bottom: 5px;
@@ -213,6 +309,11 @@ div.post.op {
 
 div.post.op hr {
   border-color: #D9BFB7;
+}
+
+div.post.op.selected, div.post.reply.selected {
+	background: #FFF!important;
+	border-color: #DDD!important;
 }
 
 p.intro {
@@ -227,18 +328,18 @@ input.delete {
 }
 
 p.intro span.subject {
-  color: #0F0C5D;
-  font-weight: bold;
+	color: #3F0C5D;
+	font-weight: bold;
+	font-style: italic;
 }
-
 p.intro span.name {
-  color: #117743;
-  font-weight: bold;
+	color: #116633;
+	font-weight: bold;
 }
 
-p.intro span.capcode,p.intro a.capcode,p.intro a.nametag {
-  color: #F00000;
-  margin-left: 0;
+p.intro a.capcode, p.intro a.nametag {
+	color: #F00000;
+	margin-left: 0;
 }
 
 p.intro a {
@@ -260,12 +361,17 @@ div.post.reply div.body {
   padding-bottom: 0.3em;
 }
 
-div.post.reply.highlighted {
-  background: #D6BAD0;
+div.body a {
+	display: inline-block;
+	width: auto;
+	max-width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
-div.post.reply div.body a {
-  color: #D00;
+div.post.reply.highlighted {
+	background: #EEE;
 }
 
 div.post {
@@ -278,27 +384,63 @@ div.post div.body {
 }
 
 div.post.reply {
-  background: #D6DAF0;
-  margin: 0.2em 4px;
-  padding: 0.2em 0.3em 0.5em 0.6em;
-  border-width: 1px;
-  border-style: none solid solid none;
-  border-color: #B7C5D9;
-  display: inline-block;
+	margin: 0.2em 16px;
+	padding: 0.2em 0.3em 0.5em 0.6em;
+	border-width: 0 1px 1px 0;
+	border-style: none solid solid none;
+	display: inline-block;
+	border-color: #999;
   max-width: 94%!important;
 }
 
+.threadblock {
+	background: url(img/z-t1.png) top repeat-x #d9d8da;
+	background-size: auto 100%!important;
+	border-top: 1px solid #b9b7b8;
+	margin-top: 2em;
+	clear: both;
+}
+.threadblock:nth-child(even) {
+	background: url(img/z-t2.png) top repeat-x #d9d8da;
+	background-size: auto 100%!important;
+	border-top: 1px solid #b3b2b6;
+}
+.threadblock > .reply {
+	background: url(img/z-r1.png) bottom repeat-x #b1b2b5;
+	background-size: auto 100%!important;
+	border-color: #999;
+}
+.threadblock > .reply:nth-of-type(even) {
+	background: url(img/z-r2.png) bottom repeat-x #b2aeaf;
+	background-size: auto 100%!important;
+	border-color: #888;
+}
+.threadblock > hr {
+	display: none;
+}
+
+.post-hover {
+	display: block;
+	position: absolute;
+	border: 1px solid #ccc;
+	box-shadow: 2px 2px 2px #444;
+	background: #ddd;
+}
+
 span.trip {
-  color: #228854;
+	color: #226666;
 }
 
 span.quote {
-  color: #789922;
+	color: #389052;
 }
 
 span.omitted {
-  display: block;
-  margin-top: 1em;
+	display: block;
+	margin-top: 1em;
+	color: #677;
+	font-size: small;
+	font-style: italic;
 }
 
 br.clear {
@@ -408,12 +550,12 @@ fieldset label {
 }
 
 div.pages {
-  color: #89A;
-  background: #D6DAF0;
+	color: #444;
+	background: #999;
   display: inline;
   padding: 8px;
-  border-right: 1px solid #B7C5D9;
-  border-bottom: 1px solid #B7C5D9;
+	border-right: 1px solid #666;
+	border-bottom: 1px solid #666;
 }
 
 div.pages.top {
@@ -424,6 +566,22 @@ div.pages.top {
   top: 0;
   right: 0;
   opacity: 0.9;
+}
+div.pages a.selected {
+	color: black;
+	font-weight: bolder;
+}
+div.pages a:link {
+	text-decoration: none;
+}
+div.pages form {
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+div.pages form input {
+	margin: 0 5px;
+	display: inline;
 }
 
 @media screen and (max-width: 800px) {
@@ -454,9 +612,9 @@ div.pages form input {
 
 hr {
   border: none;
-  border-top: 1px solid #B7C5D9;
+	border-top: 1px solid #aaa;
   height: 0;
-  clear: left;
+	clear: both;
 }
 
 div.boardlist {
@@ -469,8 +627,30 @@ div.boardlist.bottom {
   margin-top: 20px;
 }
 
+div.boardlist.bottom:before {
+	color: #982;
+	font-weight: bold;
+	content: 'efchan: ';
+}
+
 div.boardlist a {
   text-decoration: none;
+}
+
+div.boardlist.bottom span:before {
+	content: '[ ';
+}
+div.boardlist.bottom span:after {
+	content: ' ] ';
+}
+div.boardlist.bottom span a:before {
+	content: '/';
+}
+div.boardlist.bottom span a:after {
+	content: '/ · ';
+}
+div.boardlist.bottom span a:last-child:after {
+	content: '/';
 }
 
 div.report {
@@ -496,6 +676,10 @@ table.modlog tr th {
 
 table.modlog tr th {
   background: #98E;
+}
+
+table.modlog tr:nth-child(even), table.mod tr:nth-child(even) {
+	background: #ccc;
 }
 
 td.minimal,th.minimal {
@@ -958,4 +1142,3 @@ span.pln {
 #watchlist-toggle, .watchThread, .watchlist-remove, #clearList, #clearGhosts {
 	cursor: pointer;
 }
-

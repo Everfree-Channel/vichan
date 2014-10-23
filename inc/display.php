@@ -25,7 +25,7 @@ function doBoardListPart($list, $root, &$boards) {
 	$body = '';
 	foreach ($list as $key => $board) {
 		if (is_array($board))
-			$body .= ' <span class="sub" data-description="' . $key . '">[' . doBoardListPart($board, $root, $boards) . ']</span> ';
+			$body .= ' <span class="sub" data-description="' . $key . '">' . doBoardListPart($board, $root, $boards) . '</span> ';
 		else {
 			if (gettype($key) == 'string') {
 				$body .= ' <a href="' . $board . '">' . $key . '</a> /';
@@ -66,7 +66,7 @@ function createBoardlist($mod=false) {
 	$top = "<script type='text/javascript'>if (typeof do_boardlist != 'undefined') do_boardlist();</script>";
 	
 	return array(
-		'top' => '<div class="boardlist">' . $body . '</div>' . $top,
+		'top' => '<div class="boardlist top">' . $body . '</div>' . $top,
 		'bottom' => '<div class="boardlist bottom">' . $body . '</div>'
 	);
 }
@@ -458,4 +458,3 @@ class Thread {
 		return $built;
 	}
 };
-
