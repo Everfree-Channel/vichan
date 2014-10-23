@@ -842,7 +842,7 @@
 	$config['poster_id_length'] = 5;
 
 	// Show thread subject in page title.
-	$config['thread_subject_in_title'] = false;
+	$config['thread_subject_in_title'] = true;
 
 	// Additional lines added to the footer of all pages.
 	$config['footer'][] = _('All trademarks, copyrights, comments, and images on this page are owned by and are the responsibility of their respective parties.');
@@ -967,7 +967,6 @@
 	$config['additional_javascript'][] = 'js/auto-reload.js';
 	$config['additional_javascript'][] = 'js/hide-threads.js';
 	$config['additional_javascript'][] = 'js/hide-images.js';
-	$config['additional_javascript'][] = 'js/watch.js';
 	$config['additional_javascript'][] = 'js/post-hover.js';
 	$config['additional_javascript'][] = 'js/options.js';
 	$config['additional_javascript'][] = 'js/options/general.js';
