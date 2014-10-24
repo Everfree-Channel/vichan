@@ -24,7 +24,7 @@
 
 
   $config['boards'] = array(
-    array('ef'), array('site')
+    array('efchan' => '/'), array('ef'), array('site')
   );
 
   // Whether or not to put brackets around the whole board list
