@@ -3,8 +3,9 @@ body {
 	color: #231f20;
 	font-family: "Trebuchet MS", sans-serif;
 	font-size: 11pt;
-	margin: 0;
-	padding: 0;
+	margin: 0 4px;
+	padding-left: 4px;
+	padding-right: 4px;
 }
 
 @font-face {
@@ -574,6 +575,11 @@ div.pages a.selected {
 div.pages a:link {
 	text-decoration: none;
 }
+div.pages .catalog-link {
+	display: inline-block;
+	margin-left: 1em;
+}
+
 div.pages form {
 	margin: 0;
 	padding: 0;
@@ -625,12 +631,6 @@ div.boardlist {
 
 div.boardlist.bottom {
   margin-top: 20px;
-}
-
-div.boardlist.bottom:before {
-	color: #982;
-	font-weight: bold;
-	content: 'efchan: ';
 }
 
 div.boardlist a {

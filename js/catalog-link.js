@@ -18,7 +18,7 @@ var board = $("input[name='board']");
 var catalog_url = configRoot + board.first().val() + "/catalog.html";
 
 var pages = document.getElementsByClassName('pages')[0];
-var bottom = document.getElementsByClassName('boardlist bottom')[0]
+var bottom = document.getElementsByClassName('boardlist bottom')[0];
 var subtitle = document.getElementsByClassName('subtitle')[0];
 
 var link = document.createElement('a');
@@ -26,19 +26,13 @@ link.href = catalog_url;
 
 if (pages) {
 	link.textContent = _('Catalog');
-	link.style.color = '#F10000';
-	link.style.padding = '4px';
-	link.style.paddingLeft = '9px';
-	link.style.borderLeft = '1px solid'
-	link.style.borderLeftColor = '#A8A8A8';
-	link.style.textDecoration = "underline";
+	link.className = 'catalog-link';
 
 	pages.appendChild(link)
 }
 else {
 	link.textContent = '['+_('Catalog')+']';
-	link.style.paddingLeft = '10px';
-	link.style.textDecoration = "underline";
+	link.className = 'catalog-link';
 	document.body.insertBefore(link, bottom);
 }
 
